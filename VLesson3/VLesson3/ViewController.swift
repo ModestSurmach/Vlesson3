@@ -50,6 +50,7 @@ class ViewController: UIViewController {
     
     
     func animate() {
+        
         let dx = mainView.frame.width - (myView.frame.width * 1.5)
         animator = UIViewPropertyAnimator(duration: 0.3, curve: .linear, animations:  {
             
@@ -64,12 +65,10 @@ class ViewController: UIViewController {
         mainView.addSubview(myView)
         
         myView.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([myView.leftAnchor.constraint(equalTo: mainView.leftAnchor, constant: 0),
                                      myView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 150),
                                      myView.heightAnchor.constraint(equalToConstant: 100),
                                      myView.widthAnchor.constraint(equalToConstant: 100)])
-        
         myView.backgroundColor = .systemPink
         myView.layer.cornerRadius = 15
         
